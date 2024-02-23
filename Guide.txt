@@ -1,0 +1,9 @@
+Classes:
+    São todos os arquivos que contém um código Java. Por ser uma linguagem orientada a objetos, o Java necessita que todos os seus códigos estejam dentro de uma classe.
+
+Package:
+    Um Package é um conjunto de classes relacionadas. Podemos criar um Package que irá abrigar todas as classes de Entidades, um que irá abrigar todas as classes de Repositories, etc.
+
+Módulo:
+    Um Módulo é um conjunto de pacotes relacionados. Podemos juntar Packages que, juntos, representam um módulo específico.
+
