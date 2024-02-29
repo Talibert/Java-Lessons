@@ -7,3 +7,15 @@ Package:
 Módulo:
     Um Módulo é um conjunto de pacotes relacionados. Podemos juntar Packages que, juntos, representam um módulo específico.
 
+Static:
+    A palavra reservada Static significa que aquele método pode ser acessado sem depender de uma instância da classe. É muito comum ver o uso de Static em classes de utilidade, como a classe Math. Quando necessitamos da execução de um código que depende apenas dos parâmetros de entrada e não da construção do objeto como um todo, faz mais sentido realizar a chamada de um método static, já que não seria tão usual instanciar uma calculadora para realizar uma operação de raiz quadrada, por exemplo.
+
+toString:
+    É um método herdado da classe Object que pode ser sobrescrito em qualquer classe. O Objetivo é criar uma representação do objeto em forma de String para fins de, principalmente, desenvolvimento.
+
+Sobrecarga:
+    É quando criamos mais de um constructor com o mesmo nome, os diferenciando apenas pelos argumentos recebidos. Quando o Java identifica os argumentos recebidos durante a instância do objeto, o constructor correto é acionado.
+
+Encapsulamento:
+    O conceito de Encapsulamento é proteger o acesso aos atributos da classe para que nenhum objeto seja alterado sem as devidas permições. Alterando o modificador de acesso de public para private em um argumento, o objeto passa ficar protegido contra modificações diretas. Para manueá-lo, devemos utilizar o padrão getters and setters, onde chamamos métodos públicos que pertencem a classe do objeto. Esses métodos possuem a permissão de alterar os atributos que estão definidos como private.
+
