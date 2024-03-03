@@ -19,3 +19,11 @@ Sobrecarga:
 Encapsulamento:
     O conceito de Encapsulamento é proteger o acesso aos atributos da classe para que nenhum objeto seja alterado sem as devidas permições. Alterando o modificador de acesso de public para private em um argumento, o objeto passa ficar protegido contra modificações diretas. Para manueá-lo, devemos utilizar o padrão getters and setters, onde chamamos métodos públicos que pertencem a classe do objeto. Esses métodos possuem a permissão de alterar os atributos que estão definidos como private.
 
+Tipo Referência e Tipo Valor:
+    Variáveis do tipo classe são tratadas como variáveis do tipo referência. Isso significa que seu conteúdo é, na verdade, um endereço para uma posição na memória Heap. Sendo assim, a variável está localizada em um local da memória Stack, mas o objeto (que é o seu conteúdo) está localizado em um local na memória Heap. Portanto, o conteúdo que está dentro do endereço utilizado na memória Stack é um endereço que leva até o objeto na memória Heap. Por isso, variáveis do tipo Classe são chamadas de tipo referência... Elas armazenam uma referência para uma posição de memória.
+    Variáveis do tipo primitivo são tratadas como variáveis do tipo valor. Elas são criadas na memória stack e armazenam o próprio valor ali. Não há a necessidade de armazenar um endereço que leve para uma outra posição como o valor real.
+
+List:
+    List é uma interface utilizada para criar listas no Java. Por ser uma interface, ela não pode ser instânciada diretamente e, por isso, é necessário que uma classe a implemente. As listas são homogêneas, ordenadas, iniciadas vazias, alocadas por demanda e referenciam seu elementos através de nós.
+    Exemplos de classes que implementam a interface List: ArrayList e LinkedList.
+    
