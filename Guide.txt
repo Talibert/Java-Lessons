@@ -8,7 +8,7 @@ Módulo:
     Um Módulo é um conjunto de pacotes relacionados. Podemos juntar Packages que, juntos, representam um módulo específico.
 
 Static:
-    A palavra reservada Static significa que aquele método pode ser acessado sem depender de uma instância da classe. É muito comum ver o uso de Static em classes de utilidade, como a classe Math. Quando necessitamos da execução de um código que depende apenas dos parâmetros de entrada e não da construção do objeto como um todo, faz mais sentido realizar a chamada de um método static, já que não seria tão usual instanciar uma calculadora para realizar uma operação de raiz quadrada, por exemplo.
+    A palavra reservada Static significa que aquele método pode ser acessado sem depender de uma instância da classe. É muito comum ver o uso de Static em classes de utilidade, como a classe Math. Quando necessitamos da execução de um código que depende apenas dos parâmetros de entrada e não da construção do objeto, faz mais sentido realizar a chamada de um método static, já que não seria tão usual instanciar uma calculadora para realizar uma operação de raiz quadrada, por exemplo.
 
 toString:
     É um método herdado da classe Object que pode ser sobrescrito em qualquer classe. O Objetivo é criar uma representação do objeto em forma de String para fins de, principalmente, desenvolvimento.
@@ -26,4 +26,23 @@ Tipo Referência e Tipo Valor:
 List:
     List é uma interface utilizada para criar listas no Java. Por ser uma interface, ela não pode ser instânciada diretamente e, por isso, é necessário que uma classe a implemente. As listas são homogêneas, ordenadas, iniciadas vazias, alocadas por demanda e referenciam seu elementos através de nós.
     Exemplos de classes que implementam a interface List: ArrayList e LinkedList.
+    Instânciando uma lista:
+
+        List<String> nomeDaLista = new ArrayList<>();
+
+    List é o tipo, <String> indica o tipo dos elementos que estarão dentro da lista e ArrayList é a Classe da qual estamos instanciando a lista
+    Métodos para usar com list:
+
+        add - adiciona um elemento na lista
+        size - informa o tamanho da lista
+        remove - remove um elemento da lista
+        removeIf - remove um ou mais elementos através de um predicado (um predicado é uma expressão lambda)
+        indexOf - retorna a posição da lista que contenha um elemento informado. Retorna -1 caso não encontre nenhum elemento
+
+        Para aplicar filtros, é um pouco mais trabalhoso. O tipo list não é compatível com expressões lambdas. Portanto, durante o processo, devemos converter a lista para um tipo stream, realizar o filtro com a expressão lambda e depois converter novamente para um tipo List. Tudo isso deve ser atribuido em uma nova List:
+            List<String> resultado = lista.stream().filter(x -> x.charAt(0) == "A").collect(Collectors.toList());
+
+        Para recuperar o primeiro elemento de uma lista que atenda um predicado, devemos utilizar o método findFirst. Mas ele também não é compatível com o tipo List, por isso, devemos realizar as devidas conversões. No código abaixo, iremos converter a lista para stream, utilizar o filtro para aplicar a expressão lambda, chamar o método findFirst e passar o método orElse que será chamado caso o findFirst não encontre nada:
+            String name = lista.stream().filter(x -> x.charAt(0) == "A").findFirst().orElse(null);
+
     
