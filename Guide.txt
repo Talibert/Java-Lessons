@@ -38,6 +38,7 @@ List:
         remove - remove um elemento da lista
         removeIf - remove um ou mais elementos através de um predicado (um predicado é uma expressão lambda)
         indexOf - retorna a posição da lista que contenha um elemento informado. Retorna -1 caso não encontre nenhum elemento
+        get - pega o elemento ao informar o index dele
 
         Para aplicar filtros, é um pouco mais trabalhoso. O tipo list não é compatível com expressões lambdas. Portanto, durante o processo, devemos converter a lista para um tipo stream, realizar o filtro com a expressão lambda e depois converter novamente para um tipo List. Tudo isso deve ser atribuido em uma nova List:
             List<String> resultado = lista.stream().filter(x -> x.charAt(0) == "A").collect(Collectors.toList());
@@ -45,4 +46,18 @@ List:
         Para recuperar o primeiro elemento de uma lista que atenda um predicado, devemos utilizar o método findFirst. Mas ele também não é compatível com o tipo List, por isso, devemos realizar as devidas conversões. No código abaixo, iremos converter a lista para stream, utilizar o filtro para aplicar a expressão lambda, chamar o método findFirst e passar o método orElse que será chamado caso o findFirst não encontre nada:
             String name = lista.stream().filter(x -> x.charAt(0) == "A").findFirst().orElse(null);
 
-    
+Data:
+    O Java possui operações importantes com data. É possível declarar datas locais e globais, converter textos para datas e datas para textos, fazer operações entre datas, desconstruir datas para obter hora, dia, mes e ano etc.
+    As operações para instanciar datas são:
+
+        LocalDate d01 = LocalDate.now(); // instancia a hora atual, sem horas
+
+        LocalDateTime d02 = LocalDateTime.now(); // instancia a hora atual, com horas
+
+        Instant d03 = Instant.now(); // instancia a hora atual, mas no fuso horário de greenwich (Londres)
+
+        LocalDate d04 = Localdate.parse("2024-03-05"); // Converte uma string no formato ISO para um objeto do tipo LocalDate
+
+        LocalDataTime d05 = LocalDateTime.parse("2024-03-05T01:30:32") // Converte uma string no formato ISO para um objeto do tipo LocalDateTime
+
+        Instant d06 = Instant.parse("2024-03-5T01:30:32Z"); // Converte uma Strint no formato ISO para um objeto do tipo Instant
