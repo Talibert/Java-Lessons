@@ -77,5 +77,23 @@ public class DateTeste {
         // Calculando o periodo entre dois objetos LocalDateTime
         Duration duration = Duration.between(d02, date1);
         System.out.println(duration.toDays());
+
+        String dataString = "2024-03-07";
+        String dataTimeString = "2024-03-07T01:30:00";
+        System.out.println("Data obtida pelo método = " + converteStringEmLocalDate(dataString));
+        System.out.println("DataTime obtida pelo método = " + converteStringEmLocalDateTime(dataTimeString));
+
+    }
+
+
+    // Método para converter a string em data
+    public static LocalDate converteStringEmLocalDate(String data) {
+        LocalDate dataTeste = LocalDate.parse(data);
+        return dataTeste;
+    }
+
+    public static LocalDateTime converteStringEmLocalDateTime(String data) {
+        LocalDateTime dataTimeTeste = LocalDateTime.parse(data);
+        return dataTimeTeste;
     }
 }

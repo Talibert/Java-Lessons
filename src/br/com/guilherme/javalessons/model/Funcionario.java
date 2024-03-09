@@ -1,17 +1,31 @@
 package br.com.guilherme.javalessons.model;
 
+import br.com.guilherme.javalessons.model.enums.FuncionarioContrato;
+
 public class Funcionario {
     private String name;
     private int idade;
     private String CPF;
 
+    private FuncionarioContrato funcionarioContrato;
+
     public Funcionario() {
     }
 
-    public Funcionario(String name, int idade, String CPF) {
+    public Funcionario(String name, int idade, String CPF, FuncionarioContrato funcionarioContrato) {
         this.name = name;
         this.idade = idade;
         this.CPF = CPF;
+        // Atribuição do enum referente ao contrato do funcionário
+        this.funcionarioContrato = funcionarioContrato;
+    }
+
+    public FuncionarioContrato getFuncionarioContrato() {
+        return funcionarioContrato;
+    }
+
+    public void setFuncionarioContrato(FuncionarioContrato funcionarioContrato) {
+        this.funcionarioContrato = funcionarioContrato;
     }
 
     public String getName() {
